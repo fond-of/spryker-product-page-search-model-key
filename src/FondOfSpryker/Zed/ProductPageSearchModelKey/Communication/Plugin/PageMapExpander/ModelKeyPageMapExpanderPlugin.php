@@ -30,7 +30,6 @@ class ModelKeyPageMapExpanderPlugin extends AbstractPlugin implements ProductPag
         }
 
         $this->addModelKeyToPageMapTransfer($pageMapTransfer, $productData);
-        $this->addModelKeyToSearchResult($pageMapTransfer, $pageMapBuilder, $productData);
 
         return $pageMapTransfer;
     }
@@ -44,17 +43,5 @@ class ModelKeyPageMapExpanderPlugin extends AbstractPlugin implements ProductPag
     protected function addModelKeyToPageMapTransfer(PageMapTransfer $pageMapTransfer, array $productData): void
     {
         $pageMapTransfer->setModelKey($productData[PageIndexMap::MODEL_KEY]);
-    }
-
-    /**
-     * @param \Generated\Shared\Transfer\PageMapTransfer $pageMapTransfer
-     * @param \Spryker\Zed\Search\Business\Model\Elasticsearch\DataMapper\PageMapBuilderInterface $pageMapBuilder
-     * @param array $productData
-     *
-     * @return void
-     */
-    protected function addModelKeyToSearchResult(PageMapTransfer $pageMapTransfer, PageMapBuilderInterface $pageMapBuilder, array $productData): void
-    {
-        $pageMapBuilder->addSearchResultData($pageMapTransfer, PageIndexMap::MODEL_KEY, $productData[PageIndexMap::MODEL_KEY]);
     }
 }
