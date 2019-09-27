@@ -22,7 +22,7 @@
   ],
   "require": {
     "php": ">=7.1",
-    "spryker/category-page-search": "~1.0.0"
+    "spryker/product-page-search": "~2.4.0"
   },
   "require-dev": {
     "spryker/code-sniffer": "^0.11",
