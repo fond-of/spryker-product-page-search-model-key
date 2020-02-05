@@ -24,7 +24,7 @@ class ModelKeyDataExpanderPlugin extends AbstractPlugin implements ProductPageDa
             return;
         }
 
-        $attributesData = \json_decode($productData[ProductPageSearchModelKeyConstants::ATTRIBUTES], true);
+        $attributesData = json_decode($productData[ProductPageSearchModelKeyConstants::ATTRIBUTES], true);
 
         if (!array_key_exists(PageIndexMap::MODEL_KEY, $attributesData)) {
             return;
